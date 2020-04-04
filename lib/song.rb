@@ -25,10 +25,10 @@ def self.create
 
 
 
- def self.new_by_name(name)
+def self.new_by_name(name)
     song = self.new
     song.name = name
-  song
+    song
   end 
   
 
@@ -38,19 +38,20 @@ def self.create
     song.name = name
     song.save
     song
+  
   end
   
  
  
   def self.find_by_name(name)
-     @@all.find {|song| song.name == name}
+    @@all.find {|song| song.name == name}
 end
 
 
   
   
   def self.find_or_create_by_name(name)
-   find_by_name(name) || create_by_name(name)
+  find_by_name(name) || create_by_name(name)
   end
   
   
@@ -70,29 +71,29 @@ end
     
     song = self.new
     
-   song.name = name_of_song 
+  song.name = name_of_song 
    
-   song.artist_name = name_of_artist
+  song.artist_name = name_of_artist
     
   song
-   end
+  end
    
-   def self.create_from_filename(string)
-       array = string.split(" - ")
+  def self.create_from_filename(string)
+      array = string.split(" - ")
     name_of_song = array[1].delete_suffix(".mp3")
     name_of_artist = array[0]
     
     song = self.new
     
-   song.name = name_of_song 
+  song.name = name_of_song 
    
-   song.artist_name = name_of_artist
+  song.artist_name = name_of_artist
    
-   song.save
+  song.save
     
   song
      
-   end
+  end
 
   
   
